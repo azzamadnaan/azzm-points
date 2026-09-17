@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -11,7 +11,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
 
       - name: Install system dependencies
         run: |
@@ -21,7 +21,8 @@ jobs:
 
       - name: Install Buildozer
         run: |
-          pip install buildozer
+          pip install git+https://github.com/kivy/buildozer.git
+          pip install cython
 
       - name: Build APK
         run: buildozer android debug
