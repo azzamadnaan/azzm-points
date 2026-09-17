@@ -9,6 +9,9 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 1.0
 requirements = python3,kivy
 
+# السطر الجديد لحل مشكلة البناء
+p4a.branch = develop
+
 orientation = portrait
 fullscreen = 0
 
